@@ -16,6 +16,7 @@
 		7EFB6F282155803500F1EDBB /* CreateBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB6F272155803500F1EDBB /* CreateBookViewController.swift */; };
 		7EFB6F2A2155813500F1EDBB /* FormTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB6F292155813500F1EDBB /* FormTextView.swift */; };
 		7EFB6F2C2155814A00F1EDBB /* FormTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EFB6F2B2155814A00F1EDBB /* FormTextView.xib */; };
+		7EFB6F2F215592CA00F1EDBB /* BooksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB6F2E215592CA00F1EDBB /* BooksTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		7EFB6F272155803500F1EDBB /* CreateBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBookViewController.swift; sourceTree = "<group>"; };
 		7EFB6F292155813500F1EDBB /* FormTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextView.swift; sourceTree = "<group>"; };
 		7EFB6F2B2155814A00F1EDBB /* FormTextView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormTextView.xib; sourceTree = "<group>"; };
+		7EFB6F2E215592CA00F1EDBB /* BooksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		7EFB6F252155800300F1EDBB /* App */ = {
 			isa = PBXGroup;
 			children = (
+				7EFB6F2D2155923800F1EDBB /* BookList */,
 				7EFB6F262155800D00F1EDBB /* Books */,
 			);
 			path = App;
@@ -119,6 +122,14 @@
 				7EFB6F2B2155814A00F1EDBB /* FormTextView.xib */,
 			);
 			path = Books;
+			sourceTree = "<group>";
+		};
+		7EFB6F2D2155923800F1EDBB /* BookList */ = {
+			isa = PBXGroup;
+			children = (
+				7EFB6F2E215592CA00F1EDBB /* BooksTableViewController.swift */,
+			);
+			path = BookList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EFB6F282155803500F1EDBB /* CreateBookViewController.swift in Sources */,
+				7EFB6F2F215592CA00F1EDBB /* BooksTableViewController.swift in Sources */,
 				7EFB6F2A2155813500F1EDBB /* FormTextView.swift in Sources */,
 				7EFB6F0821557E1200F1EDBB /* BookViewController.swift in Sources */,
 				7EFB6F0621557E1200F1EDBB /* AppDelegate.swift in Sources */,
