@@ -14,6 +14,7 @@ class CreateBookViewController: UIViewController {
     }
 
     @IBAction func onCancelButtonPressed(_ sender: UIButton) {
+        presentingViewController?.dismiss(animated: true)
     }
 
     @IBAction func onAddButtonPressed(_ sender: UIButton) {

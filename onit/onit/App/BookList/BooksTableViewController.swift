@@ -24,8 +24,17 @@ class BooksTableViewController: UITableViewController {
 
     let books = datasource
 
+    lazy var addBookButton: UIBarButtonItem = {
+        return UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(onAddBookButtonPressed(sender:))
+        )
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.rightBarButtonItems = [addBookButton, editButtonItem]
     }
 
     // MARK: - Table view data source
@@ -42,6 +51,7 @@ class BooksTableViewController: UITableViewController {
         cell.textLabel?.text = book.title
         cell.detailTextLabel?.text = book.subtitle
         cell.accessoryType = .disclosureIndicator
+        cell.editingAccessoryView = UISwitch()
 
         return cell
     }
@@ -53,6 +63,14 @@ class BooksTableViewController: UITableViewController {
         } else {
             return UITableViewCell(style: .subtitle, reuseIdentifier: reuseID)
         }
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "show_book", sender: indexPath)
+    }
+
+    @objc func onAddBookButtonPressed(sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "create_book", sender: nil)
     }
 
     /*
