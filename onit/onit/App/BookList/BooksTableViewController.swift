@@ -1,10 +1,3 @@
-//
-//  BooksTableViewController.swift
-//  onit
-//
-//  Created by Eduardo Toledo on 9/21/18.
-//  Copyright © 2018 GM2018iOS. All rights reserved.
-//
 
 struct BookViewModel {
     let title: String
@@ -70,7 +63,9 @@ class BooksTableViewController: UITableViewController {
     }
 
     @objc func onAddBookButtonPressed(sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "create_book", sender: nil)
+        let searchBookController = SearchBooksViewController()
+        let navigation = UINavigationController(rootViewController: searchBookController)
+        present(navigation, animated: true)
     }
 
     /*

@@ -8,6 +8,8 @@ class CreateBookViewController: UIViewController {
 
     @IBOutlet weak var descriptionTextView: UITextView!
 
+    let searchController = UISearchController(searchResultsController: BooksTableViewController())
+
     override func viewDidLoad() {
         super.viewDidLoad()
         descriptionTextView.text = ""

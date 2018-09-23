@@ -12,7 +12,7 @@
         <!--Books Table View Controller-->
         <scene sceneID="rA1-4K-mrq">
             <objects>
-                <tableViewController id="91e-ko-plJ" customClass="BooksTableViewController" customModule="onit" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="BooksTableViewController" id="91e-ko-plJ" customClass="BooksTableViewController" customModule="onit" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ePX-qb-htK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,7 +25,7 @@
                     <navigationItem key="navigationItem" id="OcG-RC-ro0"/>
                     <connections>
                         <segue destination="6sO-Gc-tVM" kind="show" identifier="show_book" id="ZGq-PI-FTl"/>
-                        <segue destination="49b-DT-cu2" kind="presentation" identifier="create_book" id="Low-bJ-XFe"/>
+                        <segue destination="iHv-2Z-TMg" kind="presentation" identifier="create_book" id="Low-bJ-XFe"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfU-Qq-eRc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -138,7 +138,7 @@
                                 </constraints>
                             </stackView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ygb-z2-9i6">
-                                <rect key="frame" x="0.0" y="44" width="375" height="674"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="630"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gGn-LL-FLv">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="482"/>
@@ -229,6 +229,14 @@
                                     <constraint firstAttribute="trailing" secondItem="gGn-LL-FLv" secondAttribute="trailing" id="p2r-zI-TQu"/>
                                 </constraints>
                             </scrollView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8dD-jd-Crj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="49b-DT-cu2" id="BOw-1q-o3G"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -253,7 +261,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a95-Wy-pRN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="36" y="911"/>
+            <point key="canvasLocation" x="978.39999999999998" y="847.53694581280797"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EQA-CD-xYd">
@@ -272,6 +280,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uma-TM-Bg5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-906.39999999999998" y="145.56650246305421"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bb6-am-Z6D">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iHv-2Z-TMg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LRa-xY-TSO">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="49b-DT-cu2" kind="relationship" relationship="rootViewController" id="eo7-2A-Zee"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I2G-az-Hoj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="36" y="847.53694581280797"/>
         </scene>
     </scenes>
 </document>

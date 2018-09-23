@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E9FC45A2155A4B2000852BA /* SearchBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9FC4592155A4B2000852BA /* SearchBooksViewController.swift */; };
 		7EFB6F0621557E1200F1EDBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB6F0521557E1200F1EDBB /* AppDelegate.swift */; };
 		7EFB6F0821557E1200F1EDBB /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB6F0721557E1200F1EDBB /* BookViewController.swift */; };
 		7EFB6F0B21557E1200F1EDBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EFB6F0921557E1200F1EDBB /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E9FC4592155A4B2000852BA /* SearchBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBooksViewController.swift; sourceTree = "<group>"; };
 		7EFB6F0221557E1200F1EDBB /* onit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = onit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EFB6F0521557E1200F1EDBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EFB6F0721557E1200F1EDBB /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				7EFB6F2E215592CA00F1EDBB /* BooksTableViewController.swift */,
+				7E9FC4592155A4B2000852BA /* SearchBooksViewController.swift */,
 			);
 			path = BookList;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 			files = (
 				7EFB6F282155803500F1EDBB /* CreateBookViewController.swift in Sources */,
 				7EFB6F2F215592CA00F1EDBB /* BooksTableViewController.swift in Sources */,
+				7E9FC45A2155A4B2000852BA /* SearchBooksViewController.swift in Sources */,
 				7EFB6F2A2155813500F1EDBB /* FormTextView.swift in Sources */,
 				7EFB6F0821557E1200F1EDBB /* BookViewController.swift in Sources */,
 				7EFB6F0621557E1200F1EDBB /* AppDelegate.swift in Sources */,
