@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7E9FC45A2155A4B2000852BA /* SearchBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9FC4592155A4B2000852BA /* SearchBooksViewController.swift */; };
+		7EE24154215A981E00570A98 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE24153215A981E00570A98 /* EmptyView.swift */; };
 		7EFB6F0621557E1200F1EDBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB6F0521557E1200F1EDBB /* AppDelegate.swift */; };
 		7EFB6F0821557E1200F1EDBB /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB6F0721557E1200F1EDBB /* BookViewController.swift */; };
 		7EFB6F0B21557E1200F1EDBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EFB6F0921557E1200F1EDBB /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		7E9FC4592155A4B2000852BA /* SearchBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBooksViewController.swift; sourceTree = "<group>"; };
+		7EE24153215A981E00570A98 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		7EFB6F0221557E1200F1EDBB /* onit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = onit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EFB6F0521557E1200F1EDBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EFB6F0721557E1200F1EDBB /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7EE24152215A97E700570A98 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7EE24153215A981E00570A98 /* EmptyView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		7EFB6EF921557E1200F1EDBB = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +97,7 @@
 		7EFB6F0421557E1200F1EDBB /* onit */ = {
 			isa = PBXGroup;
 			children = (
+				7EE24152215A97E700570A98 /* Views */,
 				7EFB6F252155800300F1EDBB /* App */,
 				7EFB6F0521557E1200F1EDBB /* AppDelegate.swift */,
 				7EFB6F0921557E1200F1EDBB /* Main.storyboard */,
@@ -242,6 +253,7 @@
 				7E9FC45A2155A4B2000852BA /* SearchBooksViewController.swift in Sources */,
 				7EFB6F2A2155813500F1EDBB /* FormTextView.swift in Sources */,
 				7EFB6F0821557E1200F1EDBB /* BookViewController.swift in Sources */,
+				7EE24154215A981E00570A98 /* EmptyView.swift in Sources */,
 				7EFB6F0621557E1200F1EDBB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

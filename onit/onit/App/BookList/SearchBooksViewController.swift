@@ -26,14 +26,18 @@ class SearchBooksViewController: UIViewController {
     }
 
     func addEmptyView() {
-        let emptyLabel = UILabel()
-        emptyLabel.text = "Search for a book!"
+        let emptyView = EmptyView()
+        emptyView.translatesAutoresizingMaskIntoConstraints = false
 
-        view.addSubview(emptyLabel)
-        emptyLabel.translatesAutoresizingMaskIntoConstraints = false
+        emptyView.text = "Search for a book!"
+        emptyView.buttonTitle = "Start searching"
+        emptyView.image = #imageLiteral(resourceName: "book-icon")
+        emptyView.delegate = self
+
+        view.addSubview(emptyView)
         NSLayoutConstraint.activate([
-            emptyLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            emptyLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            emptyView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            emptyView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
 
@@ -52,5 +56,11 @@ extension SearchBooksViewController: UISearchResultsUpdating {
     // MARK: - UISearchResultsUpdating Delegate
     func updateSearchResults(for searchController: UISearchController) {
         // TODO
+    }
+}
+
+extension SearchBooksViewController: EmptyViewDelegate {
+    func emptyViewdidPressActionButton(_ emptyView: EmptyView) {
+        searchController.searchBar.becomeFirstResponder()
     }
 }
