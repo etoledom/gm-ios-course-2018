@@ -13,6 +13,7 @@ class SearchBooksViewController: UIViewController {
         super.viewDidLoad()
         addSearchBar()
         addEmptyView()
+        addNavBarButtons()
         view.backgroundColor = .white
     }
 
@@ -34,6 +35,15 @@ class SearchBooksViewController: UIViewController {
             emptyLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             emptyLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
+    }
+
+    func addNavBarButtons() {
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(onDoneButtonPressed))
+        navigationItem.rightBarButtonItem = doneButton
+    }
+
+    @objc func onDoneButtonPressed() {
+        presentingViewController?.dismiss(animated: true)
     }
 }
 
