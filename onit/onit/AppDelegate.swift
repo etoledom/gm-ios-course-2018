@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  onit
-//
-//  Created by Eduardo Toledo on 9/21/18.
-//  Copyright © 2018 GM2018iOS. All rights reserved.
-//
 
 import UIKit
 
@@ -16,6 +9,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        let googleBooks = GoogleBooksService(remote: NetworkRequestImpl())
+        googleBooks.search(for: "Clean code") { (response) in
+            do {
+                let googleBooks = try response()
+                print(googleBooks)
+            } catch {
+                print(error)
+            }
+        }
+
         return true
     }
 

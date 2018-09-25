@@ -10,7 +10,8 @@
 		7E9FC45A2155A4B2000852BA /* SearchBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9FC4592155A4B2000852BA /* SearchBooksViewController.swift */; };
 		7EE24154215A981E00570A98 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE24153215A981E00570A98 /* EmptyView.swift */; };
 		7EE24157215AA49B00570A98 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE24156215AA49B00570A98 /* NetworkRequest.swift */; };
-		7EE24159215AB93100570A98 /* GoogleBooksSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE24158215AB93100570A98 /* GoogleBooksSearch.swift */; };
+		7EE24159215AB93100570A98 /* GoogleBooksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE24158215AB93100570A98 /* GoogleBooksService.swift */; };
+		7EE2415B215ABD8C00570A98 /* GoogleBookRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE2415A215ABD8C00570A98 /* GoogleBookRemote.swift */; };
 		7EFB6F0621557E1200F1EDBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB6F0521557E1200F1EDBB /* AppDelegate.swift */; };
 		7EFB6F0821557E1200F1EDBB /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB6F0721557E1200F1EDBB /* BookViewController.swift */; };
 		7EFB6F0B21557E1200F1EDBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EFB6F0921557E1200F1EDBB /* Main.storyboard */; };
@@ -37,7 +38,8 @@
 		7E9FC4592155A4B2000852BA /* SearchBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBooksViewController.swift; sourceTree = "<group>"; };
 		7EE24153215A981E00570A98 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		7EE24156215AA49B00570A98 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
-		7EE24158215AB93100570A98 /* GoogleBooksSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBooksSearch.swift; sourceTree = "<group>"; };
+		7EE24158215AB93100570A98 /* GoogleBooksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBooksService.swift; sourceTree = "<group>"; };
+		7EE2415A215ABD8C00570A98 /* GoogleBookRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBookRemote.swift; sourceTree = "<group>"; };
 		7EFB6F0221557E1200F1EDBB /* onit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = onit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EFB6F0521557E1200F1EDBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EFB6F0721557E1200F1EDBB /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
@@ -84,7 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				7EE24156215AA49B00570A98 /* NetworkRequest.swift */,
-				7EE24158215AB93100570A98 /* GoogleBooksSearch.swift */,
+				7EE24158215AB93100570A98 /* GoogleBooksService.swift */,
+				7EE2415A215ABD8C00570A98 /* GoogleBookRemote.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -269,8 +272,9 @@
 				7EFB6F2A2155813500F1EDBB /* FormTextView.swift in Sources */,
 				7EFB6F0821557E1200F1EDBB /* BookViewController.swift in Sources */,
 				7EE24154215A981E00570A98 /* EmptyView.swift in Sources */,
+				7EE2415B215ABD8C00570A98 /* GoogleBookRemote.swift in Sources */,
 				7EFB6F0621557E1200F1EDBB /* AppDelegate.swift in Sources */,
-				7EE24159215AB93100570A98 /* GoogleBooksSearch.swift in Sources */,
+				7EE24159215AB93100570A98 /* GoogleBooksService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
