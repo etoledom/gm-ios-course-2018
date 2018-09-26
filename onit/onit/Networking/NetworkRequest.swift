@@ -28,13 +28,17 @@ struct NetworkRequestImpl: NetworkRequest {
             }
 
             let response = NetworkResponse.success(response: data)
-            completion(response)
+            DispatchQueue.main.async {
+                completion(response)
+            }
 
         }.resume()
     }
 
-    private func returnError(_ error: Error, to completion: (NetworkResponse<Data>) -> Void) {
+    private func returnError(_ error: Error, to completion: @escaping (NetworkResponse<Data>) -> Void) {
         let errorResponse = NetworkResponse<Data>.error(error)
-        completion(errorResponse)
+        DispatchQueue.main.async {
+            completion(errorResponse)
+        }
     }
 }
