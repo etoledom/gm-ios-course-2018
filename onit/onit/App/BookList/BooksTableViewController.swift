@@ -1,9 +1,4 @@
 
-struct BookViewModel {
-    let title: String
-    let subtitle: String
-    let thumbnail: String
-}
 
 let datasource = [
     BookViewModel(title: "\"Alice in Wonderland\"", subtitle: "Author, 1", thumbnail: "https://books.google.com/books/content?id=iOgx_gklcokC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"),
