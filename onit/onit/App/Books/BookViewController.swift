@@ -39,7 +39,7 @@ class BookViewController: UIViewController {
     }
 
     private func initDescription() {
-        //descriptionTextView.text = book?.
+        descriptionTextView.text = book?.extendedDescripion
     }
 }
 
