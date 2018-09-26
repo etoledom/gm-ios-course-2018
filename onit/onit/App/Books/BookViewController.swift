@@ -35,7 +35,7 @@ class BookViewController: UIViewController {
             return
         }
         
-        coverImageView.downloaded(from: thumbnail)
+        coverImageView.load(from: thumbnail)
     }
 
     private func initDescription() {

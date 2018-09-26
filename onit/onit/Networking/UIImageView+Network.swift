@@ -1,16 +1,16 @@
 import UIKit
 
 extension UIImageView {
-    func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
+    func load(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
         guard let url = URL(string: link) else {
             return
 
         }
 
-        downloaded(from: url, contentMode: mode)
+        load(from: url, contentMode: mode)
     }
 
-    func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
+    func load(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
         contentMode = mode
         ImageDownloader.getData(from: url) { (data, response, error) in
             guard
