@@ -31,7 +31,11 @@ class BookViewController: UIViewController {
     }
 
     private func initCover() {
-
+        guard let thumbnail = book?.thumbnail else {
+            return
+        }
+        
+        coverImageView.downloaded(from: thumbnail)
     }
 
     private func initDescription() {
