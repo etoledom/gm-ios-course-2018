@@ -6,7 +6,7 @@ struct BookViewModel {
 }
 
 let datasource = [
-    BookViewModel(title: "\"First Book\"", subtitle: "Author, 1", thumbnail: "http://books.google.com/books/content?id=s8dDDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"),
+    BookViewModel(title: "\"Alice in Wonderland\"", subtitle: "Author, 1", thumbnail: "https://books.google.com/books/content?id=iOgx_gklcokC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"),
     BookViewModel(title: "\"Second Book\"", subtitle: "Author, 2", thumbnail: "http://books.google.com/books/content?id=s8dDDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"),
     BookViewModel(title: "\"A long book\"", subtitle: "Author, 3", thumbnail: "http://books.google.com/books/content?id=s8dDDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"),
     BookViewModel(title: "\"No Book\"", subtitle: "Author, 4", thumbnail: "http://books.google.com/books/content?id=s8dDDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api")
