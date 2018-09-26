@@ -16,7 +16,26 @@ class BookViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print(book)
+        initTitle()
+        initSubtitle()
+        initCover()
+        initDescription()
+    }
+
+    private func initTitle() {
+        titleLabel.text = book?.title
+    }
+
+    private func initSubtitle() {
+        subtitleLabel.text = book?.subtitle
+    }
+
+    private func initCover() {
+
+    }
+
+    private func initDescription() {
+        //descriptionTextView.text = book?.
     }
 }
 
