@@ -2,13 +2,14 @@
 struct BookViewModel {
     let title: String
     let subtitle: String
+    let thumbnail: String
 }
 
 let datasource = [
-    BookViewModel(title: "\"First Book\"", subtitle: "Author, 2010"),
-    BookViewModel(title: "\"Second Book\"", subtitle: "Author, 2010"),
-    BookViewModel(title: "\"A long book\"", subtitle: "Author, 2010"),
-    BookViewModel(title: "\"No Book\"", subtitle: "Author, 2010")
+    BookViewModel(title: "\"First Book\"", subtitle: "Author, 1", thumbnail: "http://books.google.com/books/content?id=s8dDDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"),
+    BookViewModel(title: "\"Second Book\"", subtitle: "Author, 2", thumbnail: "http://books.google.com/books/content?id=s8dDDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"),
+    BookViewModel(title: "\"A long book\"", subtitle: "Author, 3", thumbnail: "http://books.google.com/books/content?id=s8dDDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"),
+    BookViewModel(title: "\"No Book\"", subtitle: "Author, 4", thumbnail: "http://books.google.com/books/content?id=s8dDDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api")
 ]
 
 import UIKit
