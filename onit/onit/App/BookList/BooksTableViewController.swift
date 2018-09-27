@@ -1,7 +1,11 @@
 
 import UIKit
 
-class BooksTableViewController: UITableViewController {
+protocol BooksList: class {
+    func add(_ content: BookViewModel)
+}
+
+final class BooksTableViewController: UITableViewController {
     struct Constants {
         static let segueIdentifier = "show_book"
     }
@@ -27,6 +31,7 @@ class BooksTableViewController: UITableViewController {
 
     @objc func onAddBookButtonPressed(sender: UIBarButtonItem) {
         let searchBookController = SearchBooksViewController()
+        searchBookController.list = self
         let navigation = UINavigationController(rootViewController: searchBookController)
         present(navigation, animated: true)
     }
@@ -56,5 +61,12 @@ extension BooksTableViewController {
                 print(error)
             }
         }
+    }
+}
+
+extension BooksTableViewController: BooksList {
+    func add(_ content: BookViewModel) {
+        dataSource.add(content)
+        tableView.reloadData()
     }
 }

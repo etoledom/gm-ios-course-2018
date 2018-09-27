@@ -1,15 +1,16 @@
 
 import UIKit
 
-class SearchBooksViewController: UIViewController {
+final class SearchBooksViewController: UIViewController {
     fileprivate let googleBooks = GoogleBooksService(remote: NetworkRequestImpl())
 
     lazy var searchController: UISearchController = {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let resultsController = storyboard.instantiateViewController(withIdentifier: "SearchResultsViewController")
         let resultsController = SearchResultsViewController()
+        resultsController.delegate = self.list
         return UISearchController(searchResultsController: resultsController)
     }()
+
+    var list: BooksList?
 
     override func viewDidLoad() {
         super.viewDidLoad()

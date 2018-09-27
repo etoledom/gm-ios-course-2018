@@ -2,6 +2,7 @@ import UIKit
 
 final class SearchResultsViewController: UITableViewController {
     let dataSource = DataSource(books: [])
+    weak var delegate: BooksList?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -9,4 +10,8 @@ final class SearchResultsViewController: UITableViewController {
         tableView.dataSource = dataSource
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedBook = dataSource.getBook(at: indexPath)
+        delegate?.add(selectedBook)
+    }
 }
