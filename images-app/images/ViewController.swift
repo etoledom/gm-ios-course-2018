@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     override func loadView() {
         self.view = mapView
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let service = FlickrService(network: OfflineNetworkRequest())

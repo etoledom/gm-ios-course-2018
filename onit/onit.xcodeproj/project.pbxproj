@@ -40,7 +40,7 @@
 /* Begin PBXFileReference section */
 		7E9FC4592155A4B2000852BA /* SearchBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBooksViewController.swift; sourceTree = "<group>"; };
 		7EE24153215A981E00570A98 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
-		7EE24156215AA49B00570A98 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		7EE24156215AA49B00570A98 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkRequest.swift; path = ../../../common/Networking/NetworkRequest.swift; sourceTree = "<group>"; };
 		7EE24158215AB93100570A98 /* GoogleBooksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBooksService.swift; sourceTree = "<group>"; };
 		7EE2415A215ABD8C00570A98 /* GoogleBookRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBookRemote.swift; sourceTree = "<group>"; };
 		7EFB6F0221557E1200F1EDBB /* onit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = onit.app; sourceTree = BUILT_PRODUCTS_DIR; };

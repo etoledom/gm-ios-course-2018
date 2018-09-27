@@ -43,7 +43,7 @@
 		7E0839AE215CEFA9000178B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E0839B8215CF029000178B5 /* FlickrImageRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrImageRemote.swift; sourceTree = "<group>"; };
 		7E0839BA215CF196000178B5 /* FlickrService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrService.swift; sourceTree = "<group>"; };
-		7E0839BD215CF68E000178B5 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		7E0839BD215CF68E000178B5 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkRequest.swift; path = ../../../common/Networking/NetworkRequest.swift; sourceTree = "<group>"; };
 		7E0839BF215CF821000178B5 /* OfflineNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineNetworkRequest.swift; sourceTree = "<group>"; };
 		7E0839C1215CF860000178B5 /* flickr_photos_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = flickr_photos_response.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
