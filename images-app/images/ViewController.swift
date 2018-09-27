@@ -1,30 +1,43 @@
-//
-//  ViewController.swift
-//  images
-//
-//  Created by Eduardo Toledo on 9/27/18.
-//  Copyright © 2018 GM2018iOS. All rights reserved.
-//
 
 import UIKit
 import MapKit
 
+struct ImageViewModel {
+    let coordinate: CLLocationCoordinate2D
+    let title: String
+    let thumbnail: URL
+    let fullsize: URL
+}
+
 class ViewController: UIViewController {
 
-    let mapView = MKMapView()
+    var mapView: MKMapView {
+        return self.view as! MKMapView
+    }
 
     override func loadView() {
-        self.view = mapView
+        self.view = MKMapView()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureMap()
+        loadData()
+    }
+
+    func configureMap() {
+        mapView.delegate = self
+        let center = CLLocationCoordinate2D(latitude: 40.171027, longitude: -74.010528)
+        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        mapView.region = MKCoordinateRegion(center: center, span: span)
+    }
+
+    func loadData() {
         let service = FlickrService(network: OfflineNetworkRequest())
         let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: 40.747472, longitude: -73.993094), radius: 200, identifier: "search")
         service.search(in: region) { [weak self] (response) in
             do {
                 let photos = try response()
-                print(photos.first!.photoUrl(size: FlickrPhoto.Size.medium))
                 let annotations: [MKPointAnnotation] = photos.map {
                     let annotation = MKPointAnnotation()
                     annotation.coordinate = CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude)
@@ -41,5 +54,17 @@ class ViewController: UIViewController {
 
 extension ViewController: MKMapViewDelegate {
 
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let pinView = ImageAnnotationView(annotation: annotation, reuseIdentifier: "pin")
+        pinView.clusteringIdentifier = "pin"
+        pinView.canShowCallout = true
+        pinView.photoView.image = #imageLiteral(resourceName: "photo")
+        if let cluster = annotation as? MKClusterAnnotation {
+            pinView.badgeCount = cluster.memberAnnotations.count
+        } else {
+            pinView.badgeCount = 0
+        }
+        return pinView
+    }
 }
 
