@@ -15,8 +15,8 @@ final class DataSource: NSObject, UITableViewDataSource {
         books.append(book)
     }
 
-    func add(_ books: [BookViewModel]) {
-        self.books.append(contentsOf: books)
+    func reset(_ books: [BookViewModel]) {
+        self.books = books
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

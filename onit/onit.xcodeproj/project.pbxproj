@@ -23,6 +23,8 @@
 		7EFB6F2C2155814A00F1EDBB /* FormTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EFB6F2B2155814A00F1EDBB /* FormTextView.xib */; };
 		7EFB6F2F215592CA00F1EDBB /* BooksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB6F2E215592CA00F1EDBB /* BooksTableViewController.swift */; };
 		D8AEEFCB215CBFB000096DFE /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AEEFCA215CBFB000096DFE /* DataSource.swift */; };
+		D8AEEFD0215CC2B000096DFE /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AEEFCE215CC2B000096DFE /* SearchResultsViewController.swift */; };
+		D8AEEFD1215CC2B000096DFE /* SearchResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8AEEFCF215CC2B000096DFE /* SearchResultsViewController.xib */; };
 		D8C61B87215B55E9001B4328 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C61B86215B55E9001B4328 /* ImageDownloader.swift */; };
 		D8C61B89215B563F001B4328 /* UIImageView+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C61B88215B563F001B4328 /* UIImageView+Network.swift */; };
 		D8C61B8C215B604F001B4328 /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C61B8B215B604F001B4328 /* BookViewModel.swift */; };
@@ -59,6 +61,8 @@
 		7EFB6F2B2155814A00F1EDBB /* FormTextView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormTextView.xib; sourceTree = "<group>"; };
 		7EFB6F2E215592CA00F1EDBB /* BooksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksTableViewController.swift; sourceTree = "<group>"; };
 		D8AEEFCA215CBFB000096DFE /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		D8AEEFCE215CC2B000096DFE /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		D8AEEFCF215CC2B000096DFE /* SearchResultsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultsViewController.xib; sourceTree = "<group>"; };
 		D8C61B86215B55E9001B4328 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		D8C61B88215B563F001B4328 /* UIImageView+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Network.swift"; sourceTree = "<group>"; };
 		D8C61B8B215B604F001B4328 /* BookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 		7EFB6F2D2155923800F1EDBB /* BookList */ = {
 			isa = PBXGroup;
 			children = (
+				D8AEEFCE215CC2B000096DFE /* SearchResultsViewController.swift */,
+				D8AEEFCF215CC2B000096DFE /* SearchResultsViewController.xib */,
 				7EFB6F2E215592CA00F1EDBB /* BooksTableViewController.swift */,
 				7E9FC4592155A4B2000852BA /* SearchBooksViewController.swift */,
 				D8C61B8B215B604F001B4328 /* BookViewModel.swift */,
@@ -257,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EFB6F1021557E1300F1EDBB /* LaunchScreen.storyboard in Resources */,
+				D8AEEFD1215CC2B000096DFE /* SearchResultsViewController.xib in Resources */,
 				7EFB6F2C2155814A00F1EDBB /* FormTextView.xib in Resources */,
 				7EFB6F0D21557E1300F1EDBB /* Assets.xcassets in Resources */,
 				7EFB6F0B21557E1200F1EDBB /* Main.storyboard in Resources */,
@@ -281,6 +288,7 @@
 				D8C61B8C215B604F001B4328 /* BookViewModel.swift in Sources */,
 				7EFB6F282155803500F1EDBB /* CreateBookViewController.swift in Sources */,
 				7EFB6F2F215592CA00F1EDBB /* BooksTableViewController.swift in Sources */,
+				D8AEEFD0215CC2B000096DFE /* SearchResultsViewController.swift in Sources */,
 				7EE24157215AA49B00570A98 /* NetworkRequest.swift in Sources */,
 				7E9FC45A2155A4B2000852BA /* SearchBooksViewController.swift in Sources */,
 				7EFB6F2A2155813500F1EDBB /* FormTextView.swift in Sources */,

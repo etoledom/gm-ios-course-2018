@@ -5,9 +5,10 @@ class SearchBooksViewController: UIViewController {
     fileprivate let googleBooks = GoogleBooksService(remote: NetworkRequestImpl())
 
     lazy var searchController: UISearchController = {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let booksController = storyboard.instantiateViewController(withIdentifier: "BooksTableViewController")
-        return UISearchController(searchResultsController: booksController)
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let resultsController = storyboard.instantiateViewController(withIdentifier: "SearchResultsViewController")
+        let resultsController = SearchResultsViewController()
+        return UISearchController(searchResultsController: resultsController)
     }()
 
     override func viewDidLoad() {
@@ -63,8 +64,8 @@ extension SearchBooksViewController: UISearchResultsUpdating {
                     let books = googleBooks.map {
                         return BookViewModel(remote: $0)
                     }
-                    if let resultsController = self?.searchController.searchResultsController as? BooksTableViewController {
-                        resultsController.dataSource.add(books)
+                    if let resultsController = self?.searchController.searchResultsController as? SearchResultsViewController {
+                        resultsController.dataSource.reset(books)
                         resultsController.tableView.reloadData()
                     }
                 } catch {
