@@ -64,7 +64,7 @@ extension SearchBooksViewController: UISearchResultsUpdating {
                         return BookViewModel(remote: $0)
                     }
                     if let resultsController = self?.searchController.searchResultsController as? BooksTableViewController {
-                        resultsController.books = books
+                        resultsController.dataSource.add(books)
                         resultsController.tableView.reloadData()
                     }
                 } catch {
