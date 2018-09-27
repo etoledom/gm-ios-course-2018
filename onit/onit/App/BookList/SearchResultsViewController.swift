@@ -2,7 +2,7 @@ import UIKit
 
 final class SearchResultsViewController: UITableViewController {
     let dataSource = DataSource(books: [])
-    weak var delegate: BooksList?
+    weak var delegate: SearchResultsDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -12,6 +12,6 @@ final class SearchResultsViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedBook = dataSource.getBook(at: indexPath)
-        delegate?.add(selectedBook)
+        delegate?.didSelect(book: selectedBook)
     }
 }

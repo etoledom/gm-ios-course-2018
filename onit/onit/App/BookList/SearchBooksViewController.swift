@@ -1,12 +1,16 @@
 
 import UIKit
 
+protocol SearchResultsDelegate: class {
+    func didSelect(book: BookViewModel)
+}
+
 final class SearchBooksViewController: UIViewController {
     fileprivate let googleBooks = GoogleBooksService(remote: NetworkRequestImpl())
 
     lazy var searchController: UISearchController = {
         let resultsController = SearchResultsViewController()
-        resultsController.delegate = self.list
+        resultsController.delegate = self
         return UISearchController(searchResultsController: resultsController)
     }()
 
@@ -80,5 +84,13 @@ extension SearchBooksViewController: UISearchResultsUpdating {
 extension SearchBooksViewController: EmptyViewDelegate {
     func emptyViewdidPressActionButton(_ emptyView: EmptyView) {
         searchController.searchBar.becomeFirstResponder()
+    }
+}
+
+extension SearchBooksViewController: SearchResultsDelegate {
+    func didSelect(book: BookViewModel) {
+        list?.add(book)
+        searchController.searchBar.text = ""
+        dismiss(animated: true, completion: nil)
     }
 }
