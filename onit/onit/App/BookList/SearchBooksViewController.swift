@@ -2,6 +2,7 @@
 import UIKit
 
 class SearchBooksViewController: UIViewController {
+    fileprivate let googleBooks = GoogleBooksService(remote: NetworkRequestImpl())
 
     lazy var searchController: UISearchController = {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -55,7 +56,22 @@ class SearchBooksViewController: UIViewController {
 extension SearchBooksViewController: UISearchResultsUpdating {
     // MARK: - UISearchResultsUpdating Delegate
     func updateSearchResults(for searchController: UISearchController) {
-        // TODO
+        if let searchTerm = searchController.searchBar.text {
+            googleBooks.search(for: searchTerm) { [weak self ](response) in
+                do {
+                    let googleBooks = try response()
+                    let books = googleBooks.map {
+                        return BookViewModel(remote: $0)
+                    }
+                    if let resultsController = self?.searchController.searchResultsController as? BooksTableViewController {
+                        resultsController.books = books
+                        resultsController.tableView.reloadData()
+                    }
+                } catch {
+                    print(error)
+                }
+            }
+        }
     }
 }
 
