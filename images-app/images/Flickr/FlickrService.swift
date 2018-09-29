@@ -11,6 +11,7 @@ import CoreLocation
 
 struct FlickrService {
     private let network: NetworkRequest
+    private let maximumRadius: CLLocationDistance = 31
 
     /// Url builder helper.
     ///
@@ -34,6 +35,11 @@ struct FlickrService {
     }
 
     func search(in region: CLCircularRegion, completion: @escaping (() throws -> ([FlickrPhoto])) -> Void) {
+        guard region.radius < maximumRadius else {
+            completion({ return [] })
+            return
+        }
+
         let url = getSearchURL(in: region)
         network.get(url: url) { (response) in
             switch response {
@@ -56,8 +62,8 @@ struct FlickrService {
         components.queryItems?.append(Method.search.queryItem)
         components.queryItems?.append(URLQueryItem(name: "lat", value: String(region.center.latitude)))
         components.queryItems?.append(URLQueryItem(name: "lon", value: String(region.center.longitude)))
-        components.queryItems?.append(URLQueryItem(name: "radius", value: String(region.radius / 1000)))
-        components.queryItems?.append(URLQueryItem(name: "per_page", value: String(20)))
+        components.queryItems?.append(URLQueryItem(name: "radius", value: String(region.radius)))
+        components.queryItems?.append(URLQueryItem(name: "per_page", value: String(50)))
         components.queryItems?.append(URLQueryItem(name: "extras", value: "geo"))
         return components.url!
     }

@@ -5,13 +5,14 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Images Collection View Controller-->
         <scene sceneID="rtt-qi-g7w">
             <objects>
-                <collectionViewController id="Dd4-yW-3fx" customClass="ImagesCollectionViewController" customModule="images" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="ImagesCollectionViewController" id="Dd4-yW-3fx" customClass="ImagesCollectionViewController" customModule="images" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" id="yFI-4w-GAS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,6 +44,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="cXm-ri-td8" id="NXD-96-R6j"/>
+                                    <segue destination="q0s-fd-qxD" kind="show" identifier="show_image" id="XxK-He-4oi"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -55,6 +57,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Weq-lp-Zjj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-146.40000000000001" y="1.3493253373313345"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="MrZ-fI-Crd">
+            <objects>
+                <viewController storyboardIdentifier="ImageViewController" automaticallyAdjustsScrollViewInsets="NO" id="q0s-fd-qxD" customClass="ImageViewController" customModule="images" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P9y-Ma-xAJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" maximumZoomScale="10" translatesAutoresizingMaskIntoConstraints="NO" id="NyY-w0-qUK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VhX-mq-Ydk">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="VhX-mq-Ydk" firstAttribute="top" secondItem="NyY-w0-qUK" secondAttribute="top" id="98Z-N4-7fc"/>
+                                    <constraint firstItem="VhX-mq-Ydk" firstAttribute="leading" secondItem="NyY-w0-qUK" secondAttribute="leading" id="Jnf-iz-4HY"/>
+                                    <constraint firstItem="VhX-mq-Ydk" firstAttribute="centerX" secondItem="NyY-w0-qUK" secondAttribute="centerX" id="sPS-vs-zkM"/>
+                                    <constraint firstAttribute="bottom" secondItem="VhX-mq-Ydk" secondAttribute="bottom" id="v5p-XN-2SI"/>
+                                    <constraint firstAttribute="trailing" secondItem="VhX-mq-Ydk" secondAttribute="trailing" id="yBv-MD-zYp"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="q0s-fd-qxD" id="eYc-8Q-Dbk"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VhX-mq-Ydk" firstAttribute="height" secondItem="P9y-Ma-xAJ" secondAttribute="height" id="CHb-hG-aV0"/>
+                            <constraint firstItem="NyY-w0-qUK" firstAttribute="top" secondItem="P9y-Ma-xAJ" secondAttribute="top" id="GQU-Df-mzt"/>
+                            <constraint firstItem="NyY-w0-qUK" firstAttribute="leading" secondItem="4Pk-IC-lvq" secondAttribute="leading" id="dUq-xn-eV0"/>
+                            <constraint firstItem="NyY-w0-qUK" firstAttribute="bottom" secondItem="4Pk-IC-lvq" secondAttribute="bottom" id="gYL-dP-izH"/>
+                            <constraint firstItem="NyY-w0-qUK" firstAttribute="trailing" secondItem="4Pk-IC-lvq" secondAttribute="trailing" id="ohT-ai-p0W"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4Pk-IC-lvq"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="VhX-mq-Ydk" id="GU0-WL-N1i"/>
+                        <outlet property="scrollView" destination="NyY-w0-qUK" id="jjm-dQ-8DK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vVP-31-bqu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="791" y="1"/>
         </scene>
     </scenes>
 </document>

@@ -39,19 +39,24 @@ class BadgeView: UIView {
 }
 
 class ImageAnnotation: NSObject, MKAnnotation {
+    let photoViewModel: PhotoViewModel
+
     let coordinate: CLLocationCoordinate2D
     let title: String?
 
-    let id: String
-    let url: URL?
-
-    init(coordinate: CLLocationCoordinate2D, image: FlickrPhoto) {
-        self.coordinate = coordinate
-        self.title = image.title
-        self.id = image.id
-        self.url = URL(string: image.photoUrl(size: FlickrPhoto.Size.thumb))
+    var id: String {
+        return photoViewModel.id
     }
 
+    var url: URL? {
+        return photoViewModel.thumbnail
+    }
+
+    init(photo: PhotoViewModel) {
+        self.coordinate = CLLocationCoordinate2D(latitude: photo.latitude, longitude: photo.longitude)
+        self.title = photo.title
+        self.photoViewModel = photo
+    }
 }
 
 class ImageAnnotationView: MKAnnotationView {
