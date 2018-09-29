@@ -3,18 +3,6 @@ import UIKit
 import MapKit
 import Kingfisher
 
-class LocationManager {
-    static let shared = LocationManager()
-    private let manager = CLLocationManager()
-
-    func start() {
-        manager.requestWhenInUseAuthorization()
-        manager.startUpdatingLocation()
-    }
-
-    private init() {}
-}
-
 class ImagesMapViewController: UIViewController {
 
     let provider: PhotosProvider = PhotosProvider()
@@ -105,7 +93,6 @@ extension ImagesMapViewController: MKMapViewDelegate {
     }
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-
         if let clusterAnnotation = annotation as? MKClusterAnnotation, let first = clusterAnnotation.memberAnnotations.first as? ImageAnnotation{
             let annotationView = pin(for: first)
             annotationView?.badgeCount = clusterAnnotation.memberAnnotations.count
@@ -120,7 +107,6 @@ extension ImagesMapViewController: MKMapViewDelegate {
     }
 
     private func pin(for annotation: ImageAnnotation) -> ImageAnnotationView? {
-
         guard let url = annotation.url else {
             return nil
         }

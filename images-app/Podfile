@@ -7,7 +7,8 @@ target 'images' do
 
   # Pods for images
   pod 'Kingfisher', '~> 4.0'
-  
+  pod 'BadgeSwift', '~> 6.0'
+
   target 'imagesTests' do
     inherit! :search_paths
     # Pods for testing

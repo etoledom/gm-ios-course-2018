@@ -1,16 +1,20 @@
 PODS:
+  - BadgeSwift (6.0.0)
   - Kingfisher (4.9.0)
 
 DEPENDENCIES:
+  - BadgeSwift (~> 6.0)
   - Kingfisher (~> 4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - BadgeSwift
     - Kingfisher
 
 SPEC CHECKSUMS:
+  BadgeSwift: 69080f6776cb812b905d46effe8263600da1bdbd
   Kingfisher: 64539b51826b778206daa6ed815d12653caa69dd
 
-PODFILE CHECKSUM: b0869f99aac01a6f9de9bae88aa6a1d6f74d6677
+PODFILE CHECKSUM: 375e1d82ac76873c1a75cf1b4fab5f88d5fe8d92
 
 COCOAPODS: 1.5.3
