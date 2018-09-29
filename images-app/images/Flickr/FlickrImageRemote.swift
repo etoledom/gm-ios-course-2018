@@ -19,8 +19,8 @@ struct FlickrPhoto: Decodable {
     let server: String
     let farm: Int
     let title: String
-    let latitude: Double
-    let longitude: Double
+    let latitude: String
+    let longitude: String
 }
 
 extension FlickrPhoto {

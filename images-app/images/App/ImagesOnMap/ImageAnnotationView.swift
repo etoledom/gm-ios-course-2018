@@ -38,6 +38,22 @@ class BadgeView: UIView {
     }
 }
 
+class ImageAnnotation: NSObject, MKAnnotation {
+    let coordinate: CLLocationCoordinate2D
+    let title: String?
+
+    let id: String
+    let url: URL?
+
+    init(coordinate: CLLocationCoordinate2D, image: FlickrPhoto) {
+        self.coordinate = coordinate
+        self.title = image.title
+        self.id = image.id
+        self.url = URL(string: image.photoUrl(size: FlickrPhoto.Size.thumb))
+    }
+
+}
+
 class ImageAnnotationView: MKAnnotationView {
 
     let photoView = UIImageView()

@@ -38,8 +38,13 @@ struct FlickrService {
         network.get(url: url) { (response) in
             switch response {
             case .success(let data):
-                let photosResponse = try! JSONDecoder().decode(FlickrPhotosResponse.self, from: data)
-                completion { return photosResponse.photos.photo }
+                do {
+                    let photosResponse = try JSONDecoder().decode(FlickrPhotosResponse.self, from: data)
+                    completion { return photosResponse.photos.photo }
+                } catch {
+                    print("ERROR:")
+                    print(error)
+                }
             case .error(let error):
                 completion { throw error }
             }
@@ -51,8 +56,9 @@ struct FlickrService {
         components.queryItems?.append(Method.search.queryItem)
         components.queryItems?.append(URLQueryItem(name: "lat", value: String(region.center.latitude)))
         components.queryItems?.append(URLQueryItem(name: "lon", value: String(region.center.longitude)))
-        components.queryItems?.append(URLQueryItem(name: "radius", value: String(region.radius)))
+        components.queryItems?.append(URLQueryItem(name: "radius", value: String(region.radius / 1000)))
         components.queryItems?.append(URLQueryItem(name: "per_page", value: String(20)))
+        components.queryItems?.append(URLQueryItem(name: "extras", value: "geo"))
         return components.url!
     }
 }
