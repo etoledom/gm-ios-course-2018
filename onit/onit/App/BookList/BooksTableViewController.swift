@@ -37,6 +37,10 @@ final class BooksTableViewController: UITableViewController {
     }
 
     // MARK: - Navigation
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: Constants.segueIdentifier, sender: indexPath)
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.segueIdentifier,
             let destination = segue.destination as? BookViewController,
