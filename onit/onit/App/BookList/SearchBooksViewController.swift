@@ -1,14 +1,20 @@
 
 import UIKit
 
-class SearchBooksViewController: UIViewController {
+protocol SearchResultsDelegate: class {
+    func didSelect(book: BookViewModel)
+}
+
+final class SearchBooksViewController: UIViewController {
     fileprivate let googleBooks = GoogleBooksService(remote: NetworkRequestImpl())
 
     lazy var searchController: UISearchController = {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let booksController = storyboard.instantiateViewController(withIdentifier: "BooksTableViewController")
-        return UISearchController(searchResultsController: booksController)
+        let resultsController = SearchResultsViewController()
+        resultsController.delegate = self
+        return UISearchController(searchResultsController: resultsController)
     }()
+
+    var list: BooksList?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,8 +69,8 @@ extension SearchBooksViewController: UISearchResultsUpdating {
                     let books = googleBooks.map {
                         return BookViewModel(remote: $0)
                     }
-                    if let resultsController = self?.searchController.searchResultsController as? BooksTableViewController {
-                        resultsController.books = books
+                    if let resultsController = self?.searchController.searchResultsController as? SearchResultsViewController {
+                        resultsController.dataSource.reset(books)
                         resultsController.tableView.reloadData()
                     }
                 } catch {
@@ -78,5 +84,13 @@ extension SearchBooksViewController: UISearchResultsUpdating {
 extension SearchBooksViewController: EmptyViewDelegate {
     func emptyViewdidPressActionButton(_ emptyView: EmptyView) {
         searchController.searchBar.becomeFirstResponder()
+    }
+}
+
+extension SearchBooksViewController: SearchResultsDelegate {
+    func didSelect(book: BookViewModel) {
+        list?.add(book)
+        searchController.searchBar.text = ""
+        dismiss(animated: true, completion: nil)
     }
 }
