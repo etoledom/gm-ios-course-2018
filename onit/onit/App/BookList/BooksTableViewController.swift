@@ -25,8 +25,6 @@ final class BooksTableViewController: UITableViewController {
         navigationItem.rightBarButtonItems = [addBookButton, editButtonItem]
 
         tableView.dataSource = dataSource
-
-        loadData()
     }
 
     @objc func onAddBookButtonPressed(sender: UIBarButtonItem) {
@@ -46,24 +44,6 @@ final class BooksTableViewController: UITableViewController {
             let destination = segue.destination as? BookViewController,
             let selectedIndexPath = sender as? IndexPath {
             destination.book = dataSource.getBook(at: selectedIndexPath)
-        }
-    }
-}
-
-// Added here for convience as I we along,to be extracted
-extension BooksTableViewController {
-    fileprivate func loadData() {
-        let googleBooks = GoogleBooksService(remote: NetworkRequestImpl())
-        googleBooks.search(for: "Alice in wonderland") { [weak self ](response) in
-            do {
-                let googleBooks = try response()
-                self?.dataSource.books = googleBooks.map {
-                        return BookViewModel(remote: $0)
-                }
-                self?.tableView.reloadData()
-            } catch {
-                print(error)
-            }
         }
     }
 }
