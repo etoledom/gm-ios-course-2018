@@ -46,8 +46,7 @@ class ImagesMapViewController: UIViewController {
     }
 
     func presentPhotos(from cluster: MKClusterAnnotation) {
-        let storyboard = UIStoryboard(name: "ImagesCollectionViewController", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "ImagesCollectionViewController")
+        let controller = instantiateController(named: "ImagesCollectionViewController")
 
         guard let imagesCollectionController = controller as? ImagesCollectionViewController else {
             return
@@ -60,8 +59,22 @@ class ImagesMapViewController: UIViewController {
         show(imagesCollectionController, sender: nil)
     }
 
-    func presentPhoto(from annotations: ImageAnnotation) {
+    func presentPhoto(from annotation: ImageAnnotation) {
+        let photoURL = annotation.photoViewModel.fullsize
+        let controller = instantiateController(named: "ImageViewController")
 
+        guard let imageController = controller as? ImageViewController else {
+            return
+        }
+
+        imageController.url = photoURL
+
+        show(imageController, sender: nil)
+    }
+
+    private func instantiateController(named name: String) -> UIViewController {
+        let storyboard = UIStoryboard(name: "ImagesCollectionViewController", bundle: nil)
+        return storyboard.instantiateViewController(withIdentifier: name)
     }
 }
 

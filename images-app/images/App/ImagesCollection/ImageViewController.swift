@@ -18,6 +18,23 @@ class ImageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(didDoubleTap(sender:)))
+        doubleTap.numberOfTapsRequired = 2
+        scrollView.addGestureRecognizer(doubleTap)
+    }
+
+    @objc func didDoubleTap(sender: UITapGestureRecognizer) {
+
+        if scrollView.zoomScale == 1 {
+            let point = sender.location(in: imageView)
+            let deltaX = imageView.bounds.width / 5
+            let deltaY = imageView.bounds.height / 5
+            let center = CGPoint(x: point.x - deltaX / 2, y: point.y - deltaY / 2)
+            let rect = CGRect(origin: center, size: CGSize(width: deltaX, height: deltaY))
+            scrollView.zoom(to: rect, animated: true)
+        } else {
+            scrollView.setZoomScale(1, animated: true)
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
